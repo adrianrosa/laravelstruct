@@ -33,3 +33,7 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/admin', 'AdminController@index')->name('admin');
+
+Route::prefix('admin')->group(function(){
+   Route::resource('jobposition', 'JobPositionController');
+});
